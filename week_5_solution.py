@@ -98,31 +98,30 @@ class SportCar(Vehicle):
 # Question 5
 
 # Q5
-class Customer:
-    def __init__(self,name,surname,tc_identification,phone):
+class customer:
+    def __init__ (self, name, surname, tc_idenfication, phone):
         self.name = name
-        self.surname=surname
-        self.tc_identification=tc_identification
-        self.phone=phone
-
-    def display_information(self):
-        return f"Musteri Bilgileri: {self.name} {self.surname} {self.tc_identification} {self.phone}"
-    
-class Account(Customer):
-    def __init__(self, name, surname, tc_identification, phone,customer, account_number,balance):
-        super().__init__(name, surname, tc_identification, phone)
-        self.customer=customer
-        self.account_number=account_number
-        self.balance=balance
-
-    def deposit(self,amount):
+        self.surname = surname
+        self.tc_idenfication = tc_idenfication
+        self.phone = phone
+    def view_customer_info (self):
+        return f"Name: {self.name}, Surname: {self.surname}, TC: {self.tc_idenfication}, Phone: {self.phone}"
+class account(customer):
+    def __init__ (self, name, surname, tc_idenfication, phone, account_number, balance=0):
+        super().__init__(name, surname, tc_idenfication, phone)
+        self.account_number = account_number
+        self.balance = balance
+    def deposit (self, amount):
         self.balance += amount
-        return self.balance
-    def money_check(self,amount):
-        if self.balance - amount <=0:
-            print(f"Hesabinizdaki bakiyeniz {self.balance} . Cekmeniz icin yeterli bakiye hesabinizda yoktur.")
+        return f"{amount} deposit is successful. New balance: {self.balance}"
+    def withdraw (self, amount):
+        if amount > self.balance:
+            return "Insufficient balance"
         else:
             self.balance -= amount
-        return 
-    def display_balance(self):
-        return f" Hesap Bakiyesi: {self.balance}"
+            return f"{amount} withdraw is successful. New balance: {self.balance}"
+    def view_balance_info (self):
+        return f"Balance: {self.balance}"
+    def view_account_info (self):
+        return f"Name: {self.name}, Surname: {self.surname}, TC: {self.tc_idenfication}, Account number: {self.account_number}, Balance: {self.balance}"
+  
