@@ -105,7 +105,7 @@ class customer:
         self.tc_idenfication = tc_idenfication
         self.phone = phone
     def view_customer_info (self):
-        return f"Name: {self.name}, Surname: {self.surname}, TC: {self.tc_idenfication}, Phone: {self.phone}"
+        print (f"Name: {self.name}, Surname: {self.surname}, TC: {self.tc_idenfication}, Phone: {self.phone}")
 class account(customer):
     def __init__ (self, name, surname, tc_idenfication, phone, account_number, balance=0):
         super().__init__(name, surname, tc_idenfication, phone)
@@ -113,15 +113,15 @@ class account(customer):
         self.balance = balance
     def deposit (self, amount):
         self.balance += amount
-        return f"{amount} deposit is successful. New balance: {self.balance}"
+        print (f"{amount} deposit is successful. New balance: {self.balance}")
     def withdraw (self, amount):
         if amount > self.balance:
-            return "Insufficient balance"
+            print ("Insufficient balance")
         else:
             self.balance -= amount
-            return f"{amount} withdraw is successful. New balance: {self.balance}"
+            print (f"{amount} withdraw is successful. New balance: {self.balance}")
     def view_balance_info (self):
-        return f"Balance: {self.balance}"
+        print (f"Balance: {self.balance}")
     def view_account_info (self):
-        return f"Name: {self.name}, Surname: {self.surname}, TC: {self.tc_idenfication}, Account number: {self.account_number}, Balance: {self.balance}"
+        print (f"Name: {self.name}, Surname: {self.surname}, TC: {self.tc_idenfication}, Account number: {self.account_number}, Balance: {self.balance}")
   
