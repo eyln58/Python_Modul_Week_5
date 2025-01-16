@@ -60,25 +60,35 @@ class Square(Shape):
 
 #Question 4
 
-class vehicle:
-    def __init__ (self, brand, model, year):
-        self.brand = brand
+class Vehicle():
+    def __init__(self, make, model, year):
+        self.make = make
         self.model = model
         self.year = year
-    def view_vehicle_info (self):
-        return f"Brand: {self.brand}, Model: {self.model}, Year: {self.year}"
-class off_road_vechicle (vehicle):
-    def __init__ (self, brand, model, year, four_wheel_drive):
-        super().__init__(brand, model, year)
+
+    def display_info(self):
+        print("Vehicle Information:")
+        print(f"Make: {self.make}")
+        print(f"Model: {self.model}")
+        print(f"Year: {self.year}")
+
+class OffRoadVehicle(Vehicle):   
+    def __init__(self, make, model, year, four_wheel_drive):
+        super().__init__(make, model, year)
         self.four_wheel_drive = four_wheel_drive
-    def view_vehicle_info (self):
-        return f"Brand: {self.brand}, Model: {self.model}, Year: {self.year}, Four wheel drive: {self.four_wheel_drive}"
-class SportCar (vehicle):
-    def __init__ (self, brand, model, year, max_speed):
-        super().__init__(brand, model, year)
+
+    def display_info(self):
+        super().display_info()
+        print(f"Four Wheel Drive: {'Yes' if self.four_wheel_drive else 'No'}")
+
+class SportCar(Vehicle):
+    def __init__(self, make, model, year, max_speed):
+        super().__init__(make, model, year)
         self.max_speed = max_speed
-    def view_vehicle_info (self):
-        return f"Brand: {self.brand}, Model: {self.model}, Year: {self.year}, Max speed: {self.max_speed}"
+
+    def display_info(self):
+        super().display_info()
+        print(f"Max Speed: {self.max_speed} km/h")
     
 
 # Question 5
