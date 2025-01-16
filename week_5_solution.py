@@ -83,7 +83,7 @@ class OffRoadVehicle(Vehicle):
 
     def display_info(self):
         super().display_info()
-        print(f"Four Wheel Drive: {'Yes' if self.four_wheel_drive else 'No'}")
+        print(f"Four Wheel Drive: {self.four_wheel_drive}")
 
 class SportCar(Vehicle):
     def __init__(self, make, model, year, max_speed):
