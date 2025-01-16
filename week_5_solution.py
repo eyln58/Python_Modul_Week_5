@@ -54,8 +54,12 @@ class Rectangle(Shape):
         print (self.width * self.height)
 
 class Square(Shape):
+    def __init__(self, side):
+        
+        super().__init__(side, side)
+        
     def calculate_area(self):
-        print( self.width * self.width)
+        return self.width * self.height
 
 
 #Question 4
